@@ -1,0 +1,695 @@
+Date/Time:        2026-04-07 15:18:27.764 +0900
+End time:         2026-04-07 21:44:52.923 +0900
+OS Version:       macOS 15.7.4 (Build 24G517)
+Architecture:     arm64e
+Report Version:   60
+Incident Identifier: 6274D562-F1AB-444C-A7CD-6F51B74A2D92
+
+Data Source:      Microstackshots
+Shared Cache:     06500F56-F17F-34B5-BBBB-CA9B1CAEA316 slid base address 0x182b2c000, slide 0x2b2c000
+
+Command:          AUHostingServiceXPC_arrow
+Path:             /System/Library/Frameworks/AudioToolbox.framework/XPCServices/AUHostingServiceXPC_arrow.xpc/Contents/MacOS/AUHostingServiceXPC_arrow
+Identifier:       com.apple.audio.AUHostingService.arm64e
+Version:          1.0 (1)
+Build Version:    1
+Project Name:     CoreAudioServices_AUHostingServiceXPC_arrow
+Source Version:   1456709000000000
+Resource Coalition: 20663
+On Behalf Of:     1 sample Logic Pro [2467] (1 sample originated by Logic Pro [2467])
+Architecture:     arm64
+PID:              25453
+
+Event:            disk writes
+Action taken:     none
+Writes:           2147.49 MB of file backed memory dirtied over 23185 seconds (92.62 KB per second average), exceeding limit of 24.86 KB per second over 86400 seconds
+Writes limit:     2147.48 MB
+Limit duration:   86400s
+Writes caused:    2147.49 MB
+Writes duration:  23185s
+Duration:         23185.16s
+Duration Sampled: 22768.16s (event starts 416.92s before samples)
+Steps:            651 (10.49 MB/step)
+
+Hardware model:   Mac16,5
+Active cpus:      16
+Memory size:      128 GB
+HW page size:     16384
+VM page size:     16384
+
+Models:           UNKNOWN
+
+OS Cryptex File Extents: 578
+
+Heaviest stack for the target process:
+  14  start + 6076 (dyld + 27544) [0x182bfeb98]
+  14  ??? (AUHostingServiceXPC_arrow + 38572) [0x1007456ac]
+  14  NSViewServiceMain + 360 (ViewBridge + 135772) [0x18c68525c]
+  14  -[NSXPCSharedListener resume] + 32 (ViewBridge + 33800) [0x18c66c408]
+  14  xpc_main + 64 (libxpc.dylib + 99688) [0x182cb0568]
+  14  _xpc_main + 40 (libxpc.dylib + 167880) [0x182cc0fc8]
+  14  _xpc_objc_main + 816 (libxpc.dylib + 100924) [0x182cb0a3c]
+  14  NSApplicationMain + 880 (AppKit + 17116) [0x186f732dc]
+  14  -[NSApplication run] + 480 (AppKit + 187364) [0x186f9cbe4]
+  14  -[NSViewServiceApplication nextEventMatchingMask:untilDate:inMode:dequeue:] + 100 (ViewBridge + 52020) [0x18c670b34]
+  14  -[NSViewServiceApplication vbNextEventMatchingMask:untilDate:inMode:dequeue:] + 168 (ViewBridge + 126968) [0x18c682ff8]
+  14  -[NSViewServiceApplication _withToxicEventMonitorPerform:] + 152 (ViewBridge + 126488) [0x18c682e18]
+  14  __77-[NSViewServiceApplication vbNextEventMatchingMask:untilDate:inMode:dequeue:]_block_invoke + 148 (ViewBridge + 127140) [0x18c6830a4]
+  14  -[NSApplication(NSEventRouting) _nextEventMatchingEventMask:untilDate:inMode:dequeue:] + 688 (AppKit + 10327500) [0x1879485cc]
+  14  _DPSNextEvent + 684 (AppKit + 240180) [0x186fa9a34]
+  14  _BlockUntilNextEventMatchingListInModeWithFilter + 76 (HIToolbox + 2430084) [0x18ecb8484]
+  14  ReceiveNextEventCommon + 676 (HIToolbox + 812264) [0x18eb2d4e8]
+  14  RunCurrentEventLoopInMode + 324 (HIToolbox + 799356) [0x18eb2a27c]
+  14  CFRunLoopRunSpecific + 572 (CoreFoundation + 502248) [0x1830889e8]
+  13  __CFRunLoopRun + 840 (CoreFoundation + 504760) [0x1830893b8]
+  13  __CFRunLoopDoSources0 + 232 (CoreFoundation + 509796) [0x18308a764]
+  13  __CFRunLoopDoSource0 + 172 (CoreFoundation + 510456) [0x18308a9f8]
+  13  __CFRUNLOOP_IS_CALLING_OUT_TO_A_SOURCE0_PERFORM_FUNCTION__ + 28 (CoreFoundation + 510564) [0x18308aa64]
+  13  WTF::RunLoop::performWork(void*) + 36 (JavaScriptCore + 1754764) [0x1a1cb168c]
+  13  WTF::RunLoop::performWork() + 524 (JavaScriptCore + 1751024) [0x1a1cb07f0]
+  13  IPC::Connection::dispatchIncomingMessages() + 528 (WebKit + 16441292) [0x1aa303fcc]
+  13  IPC::Connection::dispatchMessage(WTF::UniqueRef<IPC::Decoder>) + 268 (WebKit + 16440052) [0x1aa303af4]
+  13  WebKit::WebProcessProxy::didReceiveMessage(IPC::Connection&, IPC::Decoder&) + 1588 (WebKit + 4908628) [0x1a9804654]
+  13  WebKit::WebProcessProxy::dispatchMessage(IPC::Connection&, IPC::Decoder&) + 40 (WebKit + 10413832) [0x1a9d44708]
+  13  IPC::MessageReceiverMap::dispatchMessage(IPC::Connection&, IPC::Decoder&) + 264 (WebKit + 16468544) [0x1aa30aa40]
+  13  WebKit::WebUserContentControllerProxy::didReceiveMessage(IPC::Connection&, IPC::Decoder&) + 648 (WebKit + 5063352) [0x1a982a2b8]
+  13  WebKit::WebUserContentControllerProxy::didPostMessage(WTF::ObjectIdentifierGeneric<WebKit::WebPageProxyIdentifierType, WTF::ObjectIdentifierMainThreadAccessTraits<unsigned long long>, unsigned long long>, WebKit::FrameInfoData&&, WTF::ObjectIdentifierGeneric<WebKit::ScriptMessageHandlerIdentifierType, WTF::ObjectIdentifierMainThreadAccessTraits<unsigned long long>, unsigned long long>, std::__1::span<unsigned char const, 18446744073709551615ul>, WTF::CompletionHandler<void (std::__1::span<unsigned char const, 18446744073709551615ul>, WTF::String const&)>&&) + 984 (WebKit + 11263456) [0x1a9e13de0]
+  13  ScriptMessageHandlerDelegate::didPostMessage(WebKit::WebPageProxy&, WebKit::FrameInfoData&&, API::ContentWorld&, WebCore::SerializedScriptValue&) + 308 (WebKit + 5054456) [0x1a9827ff8]
+  13  juce::WebViewDelegateClass::didReceiveScriptMessage(objc_object*, objc_selector*, WKUserContentController*, WKScriptMessage*) + 88 (Neutone Morpho + 12374480) [0x10e2291d0]
+  13  tomduncalf::BrowserIntegration::BrowserComponent::scriptMessageReceived(juce::var) + 96 (Neutone Morpho + 12382716) [0x10e22b1fc]
+  13  std::__1::__function::__func<tomduncalf::BrowserIntegration::BrowserIntegration::BrowserIntegration(tomduncalf::BrowserIntegration::BrowserComponent&)::$_0, std::__1::allocator<tomduncalf::BrowserIntegration::BrowserIntegration::BrowserIntegration(tomduncalf::BrowserIntegration::BrowserComponent&)::$_0>, void (juce::var)>::operator()(juce::var&&) + 832 (Neutone Morpho + 12398928) [0x10e22f150]
+  13  std::__1::__function::__func<tomduncalf::BrowserIntegration::NeutoneBrowserIntegrationPluginClient::setupBrowserPluginIntegration()::$_6, std::__1::allocator<tomduncalf::BrowserIntegration::NeutoneBrowserIntegrationPluginClient::setupBrowserPluginIntegration()::$_6>, void (juce::var)>::operator()(juce::var&&) + 1120 (Neutone Morpho + 12526120) [0x10e24e228]
+  7   juce::Base64::convertFromBase64(juce::OutputStream&, juce::StringRef) + 1280 (Neutone Morpho + 11239832) [0x10e114198]
+  7   juce::OutputStream::writeByte(char) + 36 (Neutone Morpho + 11061060) [0x10e0e8744]
+  7   write + 8 (libsystem_kernel.dylib + 18164) [0x182f616f4]
+
+
+Powerstats for:   AUHostingServiceXPC_arrow [25453] [unique pid 420911]
+UUID:             4A5EAE08-4391-3D65-AD30-94F7D257CD2C
+Path:             /System/Library/Frameworks/AudioToolbox.framework/XPCServices/AUHostingServiceXPC_arrow.xpc/Contents/MacOS/AUHostingServiceXPC_arrow
+Identifier:       com.apple.audio.AUHostingService.arm64e
+Version:          1.0 (1)
+Build Version:    1
+Project Name:     CoreAudioServices_AUHostingServiceXPC_arrow
+Source Version:   1456709000000000
+Resource Coalition: 14 samples 20663
+On Behalf Of:     1 sample Logic Pro [2467] (1 sample originated by Logic Pro [2467])
+Architecture:     arm64
+Footprint:        1773.84 MB -> 2897.09 MB (+1123.25 MB) (max 3183.59 MB )
+Pageins:          8 pages
+Start time:       2026-04-07 21:18:43.293 +0900
+End time:         2026-04-07 21:44:52.844 +0900
+Num samples:      14 (2%)
+Num threads:      1
+Primary state:    14 samples Non-Frontmost App, Non-Suppressed, Kernel mode, Effective Thread QoS User Interactive, Requested Thread QoS User Interactive, Override Thread QoS Unspecified, p-core
+User Activity:    0 samples Idle, 14 samples Active
+Power Source:     14 samples on Battery, 0 samples on AC
+  14  start + 6076 (dyld + 27544) [0x182bfeb98]
+    14  ??? (AUHostingServiceXPC_arrow + 38572) [0x1007456ac]
+      14  NSViewServiceMain + 360 (ViewBridge + 135772) [0x18c68525c]
+        14  -[NSXPCSharedListener resume] + 32 (ViewBridge + 33800) [0x18c66c408]
+          14  xpc_main + 64 (libxpc.dylib + 99688) [0x182cb0568]
+            14  _xpc_main + 40 (libxpc.dylib + 167880) [0x182cc0fc8]
+              14  _xpc_objc_main + 816 (libxpc.dylib + 100924) [0x182cb0a3c]
+                14  NSApplicationMain + 880 (AppKit + 17116) [0x186f732dc]
+                  14  -[NSApplication run] + 480 (AppKit + 187364) [0x186f9cbe4]
+                    14  -[NSViewServiceApplication nextEventMatchingMask:untilDate:inMode:dequeue:] + 100 (ViewBridge + 52020) [0x18c670b34]
+                      14  -[NSViewServiceApplication vbNextEventMatchingMask:untilDate:inMode:dequeue:] + 168 (ViewBridge + 126968) [0x18c682ff8]
+                        14  -[NSViewServiceApplication _withToxicEventMonitorPerform:] + 152 (ViewBridge + 126488) [0x18c682e18]
+                          14  __77-[NSViewServiceApplication vbNextEventMatchingMask:untilDate:inMode:dequeue:]_block_invoke + 148 (ViewBridge + 127140) [0x18c6830a4]
+                            14  -[NSApplication(NSEventRouting) _nextEventMatchingEventMask:untilDate:inMode:dequeue:] + 688 (AppKit + 10327500) [0x1879485cc]
+                              14  _DPSNextEvent + 684 (AppKit + 240180) [0x186fa9a34]
+                                14  _BlockUntilNextEventMatchingListInModeWithFilter + 76 (HIToolbox + 2430084) [0x18ecb8484]
+                                  14  ReceiveNextEventCommon + 676 (HIToolbox + 812264) [0x18eb2d4e8]
+                                    14  RunCurrentEventLoopInMode + 324 (HIToolbox + 799356) [0x18eb2a27c]
+                                      14  CFRunLoopRunSpecific + 572 (CoreFoundation + 502248) [0x1830889e8]
+                                        13  __CFRunLoopRun + 840 (CoreFoundation + 504760) [0x1830893b8]
+                                          13  __CFRunLoopDoSources0 + 232 (CoreFoundation + 509796) [0x18308a764]
+                                            13  __CFRunLoopDoSource0 + 172 (CoreFoundation + 510456) [0x18308a9f8]
+                                              13  __CFRUNLOOP_IS_CALLING_OUT_TO_A_SOURCE0_PERFORM_FUNCTION__ + 28 (CoreFoundation + 510564) [0x18308aa64]
+                                                13  WTF::RunLoop::performWork(void*) + 36 (JavaScriptCore + 1754764) [0x1a1cb168c]
+                                                  13  WTF::RunLoop::performWork() + 524 (JavaScriptCore + 1751024) [0x1a1cb07f0]
+                                                    13  IPC::Connection::dispatchIncomingMessages() + 528 (WebKit + 16441292) [0x1aa303fcc]
+                                                      13  IPC::Connection::dispatchMessage(WTF::UniqueRef<IPC::Decoder>) + 268 (WebKit + 16440052) [0x1aa303af4]
+                                                        13  WebKit::WebProcessProxy::didReceiveMessage(IPC::Connection&, IPC::Decoder&) + 1588 (WebKit + 4908628) [0x1a9804654]
+                                                          13  WebKit::WebProcessProxy::dispatchMessage(IPC::Connection&, IPC::Decoder&) + 40 (WebKit + 10413832) [0x1a9d44708]
+                                                            13  IPC::MessageReceiverMap::dispatchMessage(IPC::Connection&, IPC::Decoder&) + 264 (WebKit + 16468544) [0x1aa30aa40]
+                                                              13  WebKit::WebUserContentControllerProxy::didReceiveMessage(IPC::Connection&, IPC::Decoder&) + 648 (WebKit + 5063352) [0x1a982a2b8]
+                                                                13  WebKit::WebUserContentControllerProxy::didPostMessage(WTF::ObjectIdentifierGeneric<WebKit::WebPageProxyIdentifierType, WTF::ObjectIdentifierMainThreadAccessTraits<unsigned long long>, unsigned long long>, WebKit::FrameInfoData&&, WTF::ObjectIdentifierGeneric<WebKit::ScriptMessageHandlerIdentifierType, WTF::ObjectIdentifierMainThreadAccessTraits<unsigned long long>, unsigned long long>, std::__1::span<unsigned char const, 18446744073709551615ul>, WTF::CompletionHandler<void (std::__1::span<unsigned char const, 18446744073709551615ul>, WTF::String const&)>&&) + 984 (WebKit + 11263456) [0x1a9e13de0]
+                                                                  13  ScriptMessageHandlerDelegate::didPostMessage(WebKit::WebPageProxy&, WebKit::FrameInfoData&&, API::ContentWorld&, WebCore::SerializedScriptValue&) + 308 (WebKit + 5054456) [0x1a9827ff8]
+                                                                    13  juce::WebViewDelegateClass::didReceiveScriptMessage(objc_object*, objc_selector*, WKUserContentController*, WKScriptMessage*) + 88 (Neutone Morpho + 12374480) [0x10e2291d0]
+                                                                      13  tomduncalf::BrowserIntegration::BrowserComponent::scriptMessageReceived(juce::var) + 96 (Neutone Morpho + 12382716) [0x10e22b1fc]
+                                                                        13  std::__1::__function::__func<tomduncalf::BrowserIntegration::BrowserIntegration::BrowserIntegration(tomduncalf::BrowserIntegration::BrowserComponent&)::$_0, std::__1::allocator<tomduncalf::BrowserIntegration::BrowserIntegration::BrowserIntegration(tomduncalf::BrowserIntegration::BrowserComponent&)::$_0>, void (juce::var)>::operator()(juce::var&&) + 832 (Neutone Morpho + 12398928) [0x10e22f150]
+                                                                          13  std::__1::__function::__func<tomduncalf::BrowserIntegration::NeutoneBrowserIntegrationPluginClient::setupBrowserPluginIntegration()::$_6, std::__1::allocator<tomduncalf::BrowserIntegration::NeutoneBrowserIntegrationPluginClient::setupBrowserPluginIntegration()::$_6>, void (juce::var)>::operator()(juce::var&&) + 1120 (Neutone Morpho + 12526120) [0x10e24e228]
+                                                                            7   juce::Base64::convertFromBase64(juce::OutputStream&, juce::StringRef) + 1280 (Neutone Morpho + 11239832) [0x10e114198]
+                                                                              7   juce::OutputStream::writeByte(char) + 36 (Neutone Morpho + 11061060) [0x10e0e8744]
+                                                                                7   write + 8 (libsystem_kernel.dylib + 18164) [0x182f616f4]
+                                                                            3   juce::Base64::convertFromBase64(juce::OutputStream&, juce::StringRef) + 1312 (Neutone Morpho + 11239864) [0x10e1141b8]
+                                                                              3   juce::OutputStream::writeByte(char) + 36 (Neutone Morpho + 11061060) [0x10e0e8744]
+                                                                                3   write + 8 (libsystem_kernel.dylib + 18164) [0x182f616f4]
+                                                                            3   juce::Base64::convertFromBase64(juce::OutputStream&, juce::StringRef) + 1240 (Neutone Morpho + 11239792) [0x10e114170]
+                                                                              3   juce::OutputStream::writeByte(char) + 36 (Neutone Morpho + 11061060) [0x10e0e8744]
+                                                                                3   write + 8 (libsystem_kernel.dylib + 18164) [0x182f616f4]
+                                        1   __CFRunLoopRun + 1980 (CoreFoundation + 505900) [0x18308982c]
+                                          1   __CFRUNLOOP_IS_SERVICING_THE_MAIN_DISPATCH_QUEUE__ + 16 (CoreFoundation + 764720) [0x1830c8b30]
+                                            1   _dispatch_main_queue_callback_4CF + 44 (libdispatch.dylib + 68844) [0x182df6cec]
+                                              1   _dispatch_main_queue_drain + 180 (libdispatch.dylib + 69040) [0x182df6db0]
+                                                1   _dispatch_main_queue_drain.cold.5 + 812 (libdispatch.dylib + 232320) [0x182e1eb80]
+                                                  1   _dispatch_client_callout + 16 (libdispatch.dylib + 112732) [0x182e0185c]
+                                                    1   _dispatch_call_block_and_release + 32 (libdispatch.dylib + 6956) [0x182de7b2c]
+                                                      1   __40-[AURemoteHost open:instanceUUID:reply:]_block_invoke + 236 (AudioToolboxCore + 649004) [0x18576372c]
+                                                        1   +[AUAudioUnit instantiateWithComponentDescription:options:completionHandler:] + 80 (AudioToolboxCore + 1722148) [0x185869724]
+                                                          1   +[AUAudioUnit instantiateWithComponentDescription:options:connectionProvider:completionHandler:] + 1548 (AudioToolboxCore + 1723768) [0x185869d78]
+                                                            1   -[AUAudioUnitV2Bridge initWithComponentDescription:options:error:] + 732 (AudioToolboxCore + 2225264) [0x1858e4470]
+                                                              1   APComponent::newInstance(unsigned int, bool, void (OpaqueAudioComponentInstance*, int) block_pointer) + 348 (AudioToolboxCore + 1041852) [0x1857c35bc]
+                                                                1   APComponent_FromBundle_Loadable::ResolveFactoryFunction() + 72 (AudioToolboxCore + 1046208) [0x1857c46c0]
+                                                                  1   _CFBundleLoadExecutableAndReturnError + 424 (CoreFoundation + 1105980) [0x18311c03c]
+                                                                    1   _CFBundleDlfcnLoadBundle + 172 (CoreFoundation + 662804) [0x1830afd14]
+                                                                      1   dyld4::APIs::dlopen(char const*, int) + 128 (dyld + 244352) [0x182c33a80]
+                                                                        1   dyld4::APIs::dlopen_from(char const*, int, void*) + 1136 (dyld + 245660) [0x182c33f9c]
+                                                                          1   dyld4::APIs::dlopen_from(char const*, int, void*)::$_0::operator()() const + 1856 (dyld + 291140) [0x182c3f144]
+                                                                            1   dyld4::Loader::runInitializersBottomUpPlusUpwardLinks(dyld4::RuntimeState&) const + 716 (dyld + 145276) [0x182c1b77c]
+                                                                              1   dyld4::Loader::runInitializersBottomUpPlusUpwardLinks(dyld4::RuntimeState&) const::$_0::operator()() const + 180 (dyld + 162800) [0x182c1fbf0]
+                                                                                1   dyld4::Loader::runInitializersBottomUp(dyld4::RuntimeState&, dyld3::Array<dyld4::Loader const*>&, dyld3::Array<dyld4::Loader const*>&) const + 308 (dyld + 144480) [0x182c1b460]
+                                                                                  1   dyld4::JustInTimeLoader::runInitializers(dyld4::RuntimeState&) const + 36 (dyld + 173680) [0x182c22670]
+                                                                                    1   dyld4::Loader::findAndRunAllInitializers(dyld4::RuntimeState&) const + 176 (dyld + 142516) [0x182c1acb4]
+                                                                                      1   dyld3::MachOAnalyzer::forEachInitializer(Diagnostics&, dyld3::MachOAnalyzer::VMAddrConverter const&, void (unsigned int) block_pointer, void const*) const + 432 (dyld + 389912) [0x182c57318]
+                                                                                        1   dyld3::MachOFile::forEachInitializerPointerSection(Diagnostics&, void (unsigned int, unsigned int, bool&) block_pointer) const + 160 (dyld + 347040) [0x182c4cba0]
+                                                                                          1   mach_o::Header::forEachSection(void (mach_o::Header::SectionInfo const&, bool&) block_pointer) const + 124 (dyld + 514712) [0x182c75a98]
+                                                                                            1   mach_o::Header::forEachLoadCommand(void (load_command const*, bool&) block_pointer) const + 208 (dyld + 508760) [0x182c74358]
+                                                                                              1   invocation function for block in mach_o::Header::forEachSection(void (mach_o::Header::SectionInfo const&, bool&) block_pointer) const + 240 (dyld + 521676) [0x182c775cc]
+                                                                                                1   invocation function for block in dyld3::MachOAnalyzer::forEachInitializer(Diagnostics&, dyld3::MachOAnalyzer::VMAddrConverter const&, void (unsigned int) block_pointer, void const*) const + 172 (dyld + 390776) [0x182c57678]
+                                                                                                  1   invocation function for block in dyld4::Loader::findAndRunAllInitializers(dyld4::RuntimeState&) const + 444 (dyld + 143100) [0x182c1aefc]
+                                                                                                    1   g_dwILVersion + 3076 (soothe2 + 30952456) [0x39c170c08]
+                                                                                                      1   write + 8 (libsystem_kernel.dylib + 18164) [0x182f616f4]
+                                                                                                        1   <on behalf of Logic Pro [2467] (originated by Logic Pro [2467])>
+
+  Binary Images:
+           0x10073c000 -        0x100757fff  com.apple.audio.AUHostingService.arm64e 1.0 (1)  <4A5EAE08-4391-3D65-AD30-94F7D257CD2C>  /System/Library/Frameworks/AudioToolbox.framework/XPCServices/AUHostingServiceXPC_arrow.xpc/Contents/MacOS/AUHostingServiceXPC_arrow
+           0x10d65c000 -        0x10e633fff  com.Neutone.neutone_morpho 1.1.4 (1.1.4)         <897F713A-8028-3958-924B-56AD06B5F621>  /Library/Audio/Plug-Ins/Components/Neutone Morpho.component/Contents/MacOS/Neutone Morpho
+           0x182bf8000 -        0x182c9357b  dyld (1286.10)                                   <057E5157-4105-3787-B549-E605EB246448>  /usr/lib/dyld
+           0x182c98000 -        0x182ce28ff  libxpc.dylib (2894.140.12.701.1)                 <A440B2F8-BC1A-3573-90F6-4C69E671366A>  /usr/lib/system/libxpc.dylib
+           0x182de6000 -        0x182e2c75f  libdispatch.dylib (1521.140.2)                   <63A54CE1-2AB6-3673-82E4-D8489D811475>  /usr/lib/system/libdispatch.dylib
+           0x182f5d000 -        0x182f985f3  libsystem_kernel.dylib (11417.140.69.708.3)      <85034943-C8B6-3C69-8B4B-039CD25EF16D>  /usr/lib/system/libsystem_kernel.dylib
+           0x18300e000 -        0x18354cfff  com.apple.CoreFoundation 6.9 (3603.1.405)        <A62A694C-6A33-3D79-81CE-37440D549D08>  /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation
+           0x1856c5000 -        0x185a7c51f  com.apple.audio.AudioToolboxCore 1.0 (1456.709)  <AA033461-F29F-3BD4-97B3-F317DB2C4668>  /System/Library/PrivateFrameworks/AudioToolboxCore.framework/Versions/A/AudioToolboxCore
+           0x186f6f000 -        0x1883ff75f  com.apple.AppKit 6.9 (2575.70.55)                <13F235C2-6ACB-3FB1-B165-A05F83EE09CB>  /System/Library/Frameworks/AppKit.framework/Versions/C/AppKit
+           0x18c664000 -        0x18c7940ff  com.apple.ViewBridge 770.1 (770.1)               <810C8199-1154-38F6-A9C2-6ECEB7E30E1B>  /System/Library/PrivateFrameworks/ViewBridge.framework/Versions/A/ViewBridge
+           0x18ea67000 -        0x18ed6dfdf  com.apple.HIToolbox 2.1.1 (1221)                 <7537DC6D-3280-335E-9259-ED5D308D29EC>  /System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HIToolbox.framework/Versions/A/HIToolbox
+           0x1a1b05000 -        0x1a340a99f  com.apple.JavaScriptCore 20621 (20621.3.11.11.3) <5ED49F39-1C6A-3463-85DD-209A905BE0FE>  /System/Library/Frameworks/JavaScriptCore.framework/Versions/A/JavaScriptCore
+           0x1a9356000 -        0x1aa7a7c9f  com.apple.WebKit 20621 (20621.3.11.11.3)         <B1CD589A-88A0-31FB-A402-20D0AC5467A5>  /System/Library/Frameworks/WebKit.framework/Versions/A/WebKit
+           0x39a3ec000 -        0x39c553fff  com.oeksound.soothe2 1.3.3 (1.3.3)               <EA636356-D027-35E8-9F0D-4BEDF1C59582>  /Library/Audio/Plug-Ins/Components/soothe2.component/Contents/MacOS/soothe2
+
+
+Powerstats for:   firefox (Firefox)
+UUID:             E36B603C-C793-3093-B4D4-F1F087F46B8C
+Path:             /Applications/Firefox.app/Contents/MacOS/firefox
+Identifier:       org.mozilla.firefox
+Version:          149.0 (14926.3.18)
+Team ID:          43AQ936H96
+Is First Party:   No
+Beta Identifier:  DE0A0EBE-266C-5E64-967F-266D2714D58D
+Resource Coalition: 273 samples 1056
+Architecture:     arm64
+Start time:       2026-04-07 15:25:40.922 +0900
+End time:         2026-04-07 21:44:50.017 +0900
+Num samples:      273 (42%)
+Primary state:    271 samples Non-Frontmost App, Non-Suppressed, Kernel mode, Effective Thread QoS Default, Requested Thread QoS Default, Override Thread QoS Unspecified, e-core
+User Activity:    104 samples Idle, 169 samples Active
+Power Source:     121 samples on Battery, 152 samples on AC
+  273  thread_start + 8 (libsystem_pthread.dylib + 7040) [0x182f9ab80]
+    273  _pthread_start + 136 (libsystem_pthread.dylib + 27592) [0x182f9fbc8]
+      272  ??? (libnss3.dylib + 900792) [0x121413eb8]
+        272  ??? (XUL + 1755224) [0x136d78858]
+          272  ??? (XUL + 4408620) [0x13700052c]
+            205  ??? (XUL + 4672780) [0x137040d0c]
+              205  ??? (XUL + 1788992) [0x136d80c40]
+                204  ??? (XUL + 5461536) [0x137101620]
+                  204  ??? (XUL + 5458176) [0x137100900]
+                    204  ??? (XUL + 5436052) [0x1370fb294]
+                      188  sqlite3_step + 228 (libnss3.dylib + 28300) [0x12133ee8c]
+                        188  ??? (libnss3.dylib + 258348) [0x12137712c]
+                          188  ??? (libnss3.dylib + 222916) [0x12136e6c4]
+                            188  ??? (libnss3.dylib + 41108) [0x121342094]
+                              188  ??? (libnss3.dylib + 39260) [0x12134195c]
+                                188  ??? (libnss3.dylib + 200024) [0x121368d58]
+                                  188  pwrite + 8 (libsystem_kernel.dylib + 17136) [0x182f612f0]
+                                    1    <Frontmost App>
+                                    1    <p-core>
+                      16   sqlite3_step + 568 (libnss3.dylib + 28640) [0x12133efe0]
+                        16   ??? (libnss3.dylib + 133632) [0x121358a00]
+                          16   ??? (libnss3.dylib + 133916) [0x121358b1c]
+                            16   ??? (libnss3.dylib + 134496) [0x121358d60]
+                              16   ??? (libnss3.dylib + 235712) [0x1213718c0]
+                                16   pwrite + 8 (libsystem_kernel.dylib + 17136) [0x182f612f0]
+                1    ??? (XUL + 1801888) [0x136d83ea0]
+                  1    ??? (XUL + 1714168) [0x136d6e7f8]
+                    1    ??? (XUL + 15551660) [0x137aa0cac]
+                      1    ??? (XUL + 15549140) [0x137aa02d4]
+                        1    ??? (XUL + 15543484) [0x137a9ecbc]
+                          1    ??? (XUL + 14989968) [0x137a17a90]
+                            1    ??? (XUL + 5480884) [0x1371061b4]
+                              1    sqlite3_step + 228 (libnss3.dylib + 28300) [0x12133ee8c]
+                                1    ??? (libnss3.dylib + 266192) [0x121378fd0]
+                                  1    ??? (libnss3.dylib + 222916) [0x12136e6c4]
+                                    1    ??? (libnss3.dylib + 41108) [0x121342094]
+                                      1    ??? (libnss3.dylib + 39260) [0x12134195c]
+                                        1    ??? (libnss3.dylib + 200024) [0x121368d58]
+                                          1    ??? (XUL + 5464568) [0x1371021f8]
+                                            1    pwrite + 8 (libsystem_kernel.dylib + 17136) [0x182f612f0]
+            67   ??? (XUL + 4672976) [0x137040dd0]
+              67   ??? (XUL + 1788992) [0x136d80c40]
+                64   ??? (XUL + 5461536) [0x137101620]
+                  64   ??? (XUL + 5458176) [0x137100900]
+                    64   ??? (XUL + 5436052) [0x1370fb294]
+                      57   sqlite3_step + 228 (libnss3.dylib + 28300) [0x12133ee8c]
+                        57   ??? (libnss3.dylib + 258348) [0x12137712c]
+                          57   ??? (libnss3.dylib + 222916) [0x12136e6c4]
+                            57   ??? (libnss3.dylib + 41108) [0x121342094]
+                              57   ??? (libnss3.dylib + 39260) [0x12134195c]
+                                57   ??? (libnss3.dylib + 200024) [0x121368d58]
+                                  57   pwrite + 8 (libsystem_kernel.dylib + 17136) [0x182f612f0]
+                                    1    <Frontmost App>
+                      7    sqlite3_step + 568 (libnss3.dylib + 28640) [0x12133efe0]
+                        7    ??? (libnss3.dylib + 133632) [0x121358a00]
+                          7    ??? (libnss3.dylib + 133916) [0x121358b1c]
+                            7    ??? (libnss3.dylib + 134496) [0x121358d60]
+                              7    ??? (libnss3.dylib + 235712) [0x1213718c0]
+                                7    pwrite + 8 (libsystem_kernel.dylib + 17136) [0x182f612f0]
+                2    ??? (XUL + 78820384) [0x13b6f7420]
+                  2    ??? (XUL + 78830024) [0x13b6f99c8]
+                    1    ??? (XUL + 78808280) [0x13b6f44d8]
+                      1    ??? (XUL + 1439512) [0x136d2b718]
+                        1    ??? (XUL + 2465576) [0x136e25f28]
+                          1    write + 8 (libsystem_kernel.dylib + 18164) [0x182f616f4]
+                    1    ??? (XUL + 78808240) [0x13b6f44b0]
+                      1    ??? (XUL + 39870644) [0x1391d20b4]
+                        1    ??? (XUL + 39870476) [0x1391d200c]
+                          1    ??? (XUL + 2465960) [0x136e260a8]
+                            1    ??? (XUL + 1476524) [0x136d347ac]
+                              1    PR_OpenFile + 192 (libnss3.dylib + 887080) [0x121410928]
+                                1    __open + 8 (libsystem_kernel.dylib + 5752) [0x182f5e678]
+                1    ??? (XUL + 5461648) [0x137101690]
+                  1    ??? (XUL + 5460100) [0x137101084]
+                    1    ??? (XUL + 44148720) [0x1395e67f0]
+                      1    ??? (XUL + 5433588) [0x1370fa8f4]
+                        1    sqlite3_exec + 684 (libnss3.dylib + 33012) [0x1213400f4]
+                          1    sqlite3_step + 228 (libnss3.dylib + 28300) [0x12133ee8c]
+                            1    ??? (libnss3.dylib + 266192) [0x121378fd0]
+                              1    ??? (libnss3.dylib + 222916) [0x12136e6c4]
+                                1    ??? (libnss3.dylib + 41108) [0x121342094]
+                                  1    ??? (libnss3.dylib + 39260) [0x12134195c]
+                                    1    ??? (libnss3.dylib + 200024) [0x121368d58]
+                                      1    pwrite + 8 (libsystem_kernel.dylib + 17136) [0x182f612f0]
+      1    ??? (XUL + 554220) [0x136c534ec]
+        1    ??? (XUL + 109127352) [0x13d3de6b8]
+          1    ??? (XUL + 32761888) [0x138b0a820]
+            1    ??? (XUL + 32809376) [0x138b161a0]
+              1    ??? (XUL + 32937444) [0x138b355e4]
+                1    ??? (XUL + 32896340) [0x138b2b554]
+                  1    ??? (XUL + 33233876) [0x138b7dbd4]
+                    1    write + 8 (libsystem_kernel.dylib + 18164) [0x182f616f4]
+                      1    <p-core>
+
+  Binary Images:
+           0x100888000 -        0x100897fff  org.mozilla.firefox 149.0 (14926.3.18)      <E36B603C-C793-3093-B4D4-F1F087F46B8C>  /Applications/Firefox.app/Contents/MacOS/firefox
+           0x121338000 -        0x12159ffff  libnss3.dylib (0)                           <8775E68A-CDED-3D26-9546-815C01C93E80>  /Applications/Firefox.app/Contents/MacOS/libnss3.dylib
+           0x136bcc000 -        0x14050bfff  XUL (0)                                     <8F86EA80-A3D9-3CBF-9895-3F28F7D8D016>  /Applications/Firefox.app/Contents/MacOS/XUL
+           0x182f5d000 -        0x182f985f3  libsystem_kernel.dylib (11417.140.69.708.3) <85034943-C8B6-3C69-8B4B-039CD25EF16D>  /usr/lib/system/libsystem_kernel.dylib
+           0x182f99000 -        0x182fa5a77  libsystem_pthread.dylib (536.0.0.702.1)     <C0519BF8-8FC4-3222-A4A7-D98AF817277C>  /usr/lib/system/libsystem_pthread.dylib
+
+
+Powerstats for:   mediaanalysisd
+UUID:             463AB546-E083-311D-9958-EC4A4AAF0777
+Path:             /System/Library/PrivateFrameworks/MediaAnalysis.framework/Versions/A/mediaanalysisd
+Codesigning ID:   com.apple.mediaanalysisd
+Resource Coalition: 75 samples 640
+On Behalf Of:     75 samples dasd [362] (75 samples originated by dasd [362])
+Architecture:     arm64
+Start time:       2026-04-07 17:08:45.547 +0900
+End time:         2026-04-07 19:31:13.142 +0900
+Num samples:      75 (12%)
+Primary state:    46 samples Non-Frontmost App, Non-Suppressed, Kernel mode, Effective Thread QoS Background, Requested Thread QoS Utility, Override Thread QoS Unspecified, e-core
+User Activity:    75 samples Idle, 0 samples Active
+Power Source:     0 samples on Battery, 75 samples on AC
+  75  start_wqthread + 8 (libsystem_pthread.dylib + 7028) [0x182f9ab74]
+    74  _pthread_wqthread + 232 (libsystem_pthread.dylib + 11748) [0x182f9bde4]
+      74  _dispatch_worker_thread2 + 156 (libdispatch.dylib + 83412) [0x182dfa5d4]
+        74  _dispatch_root_queue_drain + 736 (libdispatch.dylib + 81828) [0x182df9fa4]
+          74  <deduplicated_symbol> + 32 (libdispatch.dylib + 230544) [0x182e1e490]
+            74  _dispatch_client_callout + 16 (libdispatch.dylib + 112732) [0x182e0185c]
+              74  _dispatch_call_block_and_release + 32 (libdispatch.dylib + 6956) [0x182de7b2c]
+                74  ??? (mediaanalysisd + 820620) [0x10502c58c]
+                  74  ??? (mediaanalysisd + 1638576) [0x1050f40b0]
+                    46  ??? (mediaanalysisd + 1741976) [0x10510d498]
+                      46  ??? (VisualUnderstanding + 864648) [0x2627a4188]
+                        46  ??? (VisualUnderstanding + 864200) [0x2627a3fc8]
+                          46  ??? (VisualUnderstanding + 43488) [0x2626db9e0]
+                            46  OS_dispatch_queue.sync<A>(flags:execute:) + 548 (libswiftDispatch.dylib + 26840) [0x19a7228d8]
+                              46  OS_dispatch_queue._syncHelper<A>(fn:execute:rescue:) + 404 (libswiftDispatch.dylib + 23116) [0x19a721a4c]
+                                46  implicit closure #2 in implicit closure #1 in OS_dispatch_queue.sync<A>(flags:execute:) + 196 (libswiftDispatch.dylib + 27088) [0x19a7229d0]
+                                  46  _dispatch_lane_barrier_sync_invoke_and_complete + 56 (libdispatch.dylib + 71592) [0x182df77a8]
+                                    46  _dispatch_client_callout + 16 (libdispatch.dylib + 112732) [0x182e0185c]
+                                      46  thunk for @escaping @callee_guaranteed () -> () + 28 (libswiftDispatch.dylib + 6712) [0x19a71da38]
+                                        46  partial apply for thunk for @callee_guaranteed () -> () + 28 (libswiftDispatch.dylib + 35296) [0x19a7249e0]
+                                          46  closure #1 in closure #1 in OS_dispatch_queue._syncHelper<A>(fn:execute:rescue:) + 192 (libswiftDispatch.dylib + 23616) [0x19a721c40]
+                                            46  partial apply for thunk for @callee_guaranteed () -> (@out A, @error @owned Error) + 16 (libswiftDispatch.dylib + 35752) [0x19a724ba8]
+                                              46  partial apply for thunk for @callee_guaranteed () -> (@out A, @error @owned Error) + 28 (libswiftDispatch.dylib + 35408) [0x19a724a50]
+                                                46  ??? (VisualUnderstanding + 188164) [0x2626fef04]
+                                                  46  ??? (VisualUnderstanding + 45664) [0x2626dc260]
+                                                    46  ??? (VisualUnderstanding + 611408) [0x262766450]
+                                                      46  ??? (VisualUnderstanding + 807400) [0x2627961e8]
+                                                        46  ??? (VisualUnderstanding + 779448) [0x26278f4b8]
+                                                          46  ??? (VisualUnderstanding + 767064) [0x26278c458]
+                                                            46  NSManagedObjectContext.performAndWait<A>(_:) + 564 (CoreData + 1159956) [0x18a37a314]
+                                                              46  -[NSManagedObjectContext performBlockAndWait:] + 364 (CoreData + 211568) [0x18a292a70]
+                                                                46  _dispatch_lane_barrier_sync_invoke_and_complete + 56 (libdispatch.dylib + 71592) [0x182df77a8]
+                                                                  46  _dispatch_client_callout + 16 (libdispatch.dylib + 112732) [0x182e0185c]
+                                                                    46  developerSubmittedBlockToNSManagedObjectContextPerform + 252 (CoreData + 211888) [0x18a292bb0]
+                                                                      46  thunk for @escaping @callee_guaranteed () -> () + 28 (CoreData + 1134804) [0x18a3740d4]
+                                                                        46  thunk for @callee_guaranteed () -> () + 28 (CoreData + 1134764) [0x18a3740ac]
+                                                                          46  closure #1 in closure #1 in NSManagedObjectContext._rethrowsHelper_performAndWait<A>(fn:execute:rescue:) + 192 (CoreData + 1158296) [0x18a379c98]
+                                                                            46  partial apply for thunk for @callee_guaranteed () -> (@out A, @error @owned Error) + 24 (CoreData + 1160912) [0x18a37a6d0]
+                                                                              46  thunk for @callee_guaranteed () -> (@out A, @error @owned Error) + 28 (CoreData + 1132600) [0x18a373838]
+                                                                                46  ??? (VisualUnderstanding + 186332) [0x2626fe7dc]
+                                                                                  46  ??? (VisualUnderstanding + 187068) [0x2626feabc]
+                                                                                    46  ??? (VisualUnderstanding + 734588) [0x26278457c]
+                                                                                      46  ??? (VisualUnderstanding + 735572) [0x262784954]
+                                                                                        46  -[NSManagedObjectContext save:] + 1092 (CoreData + 405524) [0x18a2c2014]
+                                                                                          46  -[NSPersistentStoreCoordinator executeRequest:withContext:error:] + 1308 (CoreData + 228580) [0x18a296ce4]
+                                                                                            46  -[NSPersistentStoreCoordinator _routeHeavyweightBlock:] + 268 (CoreData + 230916) [0x18a297604]
+                                                                                              46  __65-[NSPersistentStoreCoordinator executeRequest:withContext:error:]_block_invoke.520 + 10176 (CoreData + 1542924) [0x18a3d7b0c]
+                                                                                                46  -[NSSQLCore executeRequest:withContext:error:] + 2544 (CoreData + 234424) [0x18a2983b8]
+                                                                                                  46  -[NSSQLCore dispatchRequest:withRetries:] + 440 (CoreData + 248664) [0x18a29bb58]
+                                                                                                    46  -[NSSQLDefaultConnectionManager handleStoreRequest:] + 248 (CoreData + 250208) [0x18a29c160]
+                                                                                                      46  -[NSSQLiteConnection performAndWait:] + 176 (CoreData + 146388) [0x18a282bd4]
+                                                                                                        46  _dispatch_lane_barrier_sync_invoke_and_complete + 56 (libdispatch.dylib + 71592) [0x182df77a8]
+                                                                                                          46  _dispatch_client_callout + 16 (libdispatch.dylib + 112732) [0x182e0185c]
+                                                                                                            46  __37-[NSSQLiteConnection performAndWait:]_block_invoke + 48 (CoreData + 146668) [0x18a282cec]
+                                                                                                              46  __52-[NSSQLDefaultConnectionManager handleStoreRequest:]_block_invoke + 76 (CoreData + 251032) [0x18a29c498]
+                                                                                                                46  -[NSSQLStoreRequestContext executeRequestUsingConnection:] + 272 (CoreData + 252028) [0x18a29c87c]
+                                                                                                                  46  -[NSSQLSaveChangesRequestContext executeRequestCore:] + 32 (CoreData + 566852) [0x18a2e9644]
+                                                                                                                    46  _executeSaveChangesRequest + 6520 (CoreData + 573816) [0x18a2eb178]
+                                                                                                                      46  -[NSSQLiteConnection commitTransaction] + 744 (CoreData + 607792) [0x18a2f3630]
+                                                                                                                        46  _execute + 136 (CoreData + 171212) [0x18a288ccc]
+                                                                                                                          27  sqlite3_step + 932 (libsqlite3.dylib + 197116) [0x18a7051fc]
+                                                                                                                            27  sqlite3VdbeExec + 45752 (libsqlite3.dylib + 245144) [0x18a710d98]
+                                                                                                                              27  sqlite3VdbeHalt + 1368 (libsqlite3.dylib + 98448) [0x18a6ed090]
+                                                                                                                                27  vdbeCommit + 1240 (libsqlite3.dylib + 270036) [0x18a716ed4]
+                                                                                                                                  27  sqlite3BtreeCommitPhaseOne + 160 (libsqlite3.dylib + 271420) [0x18a71743c]
+                                                                                                                                    27  sqlite3PagerCommitPhaseOne + 380 (libsqlite3.dylib + 339884) [0x18a727fac]
+                                                                                                                                      27  pagerWalFrames + 868 (libsqlite3.dylib + 706824) [0x18a781908]
+                                                                                                                                        27  unixWrite + 176 (libsqlite3.dylib + 340680) [0x18a7282c8]
+                                                                                                                                          27  guarded_pwrite_np + 8 (libsystem_kernel.dylib + 17536) [0x182f61480]
+                                                                                                                                            27  <on behalf of dasd [362] (originated by dasd [362])>
+                                                                                                                          19  sqlite3_step + 2188 (libsqlite3.dylib + 198372) [0x18a7056e4]
+                                                                                                                            19  sqlite3WalDefaultHook + 80 (libsqlite3.dylib + 342872) [0x18a728b58]
+                                                                                                                              19  sqlite3_wal_checkpoint_v2 + 708 (libsqlite3.dylib + 581552) [0x18a762fb0]
+                                                                                                                                19  sqlite3BtreeCheckpoint + 364 (libsqlite3.dylib + 1207440) [0x18a7fbc90]
+                                                                                                                                  19  sqlite3WalCheckpoint + 4744 (libsqlite3.dylib + 424416) [0x18a73c9e0]
+                                                                                                                                    19  unixWrite + 176 (libsqlite3.dylib + 340680) [0x18a7282c8]
+                                                                                                                                      19  guarded_pwrite_np + 8 (libsystem_kernel.dylib + 17536) [0x182f61480]
+                                                                                                                                        19  <on behalf of dasd [362] (originated by dasd [362])>
+                    28  ??? (mediaanalysisd + 1400896) [0x1050ba040]
+                      27  ??? (mediaanalysisd + 1395816) [0x1050b8c68]
+                        27  ??? (mediaanalysisd + 1374776) [0x1050b3a38]
+                          27  ??? (IntelligencePlatform + 4913524) [0x24274f974]
+                            27  ??? (IntelligencePlatform + 4913096) [0x24274f7c8]
+                              27  ??? (VisualUnderstanding + 165320) [0x2626f95c8]
+                                27  ??? (VisualUnderstanding + 39988) [0x2626dac34]
+                                  27  ??? (VisualUnderstanding + 43488) [0x2626db9e0]
+                                    27  OS_dispatch_queue.sync<A>(flags:execute:) + 548 (libswiftDispatch.dylib + 26840) [0x19a7228d8]
+                                      27  OS_dispatch_queue._syncHelper<A>(fn:execute:rescue:) + 404 (libswiftDispatch.dylib + 23116) [0x19a721a4c]
+                                        27  implicit closure #2 in implicit closure #1 in OS_dispatch_queue.sync<A>(flags:execute:) + 196 (libswiftDispatch.dylib + 27088) [0x19a7229d0]
+                                          27  _dispatch_lane_barrier_sync_invoke_and_complete + 56 (libdispatch.dylib + 71592) [0x182df77a8]
+                                            27  _dispatch_client_callout + 16 (libdispatch.dylib + 112732) [0x182e0185c]
+                                              27  thunk for @escaping @callee_guaranteed () -> () + 28 (libswiftDispatch.dylib + 6712) [0x19a71da38]
+                                                27  partial apply for thunk for @callee_guaranteed () -> () + 28 (libswiftDispatch.dylib + 35296) [0x19a7249e0]
+                                                  27  closure #1 in closure #1 in OS_dispatch_queue._syncHelper<A>(fn:execute:rescue:) + 192 (libswiftDispatch.dylib + 23616) [0x19a721c40]
+                                                    27  partial apply for thunk for @callee_guaranteed () -> (@out A, @error @owned Error) + 16 (libswiftDispatch.dylib + 35752) [0x19a724ba8]
+                                                      27  partial apply for thunk for @callee_guaranteed () -> (@out A, @error @owned Error) + 28 (libswiftDispatch.dylib + 35408) [0x19a724a50]
+                                                        27  ??? (VisualUnderstanding + 188164) [0x2626fef04]
+                                                          27  ??? (VisualUnderstanding + 45664) [0x2626dc260]
+                                                            27  ??? (VisualUnderstanding + 611408) [0x262766450]
+                                                              27  ??? (VisualUnderstanding + 807400) [0x2627961e8]
+                                                                27  ??? (VisualUnderstanding + 779448) [0x26278f4b8]
+                                                                  27  ??? (VisualUnderstanding + 767064) [0x26278c458]
+                                                                    27  NSManagedObjectContext.performAndWait<A>(_:) + 564 (CoreData + 1159956) [0x18a37a314]
+                                                                      27  -[NSManagedObjectContext performBlockAndWait:] + 364 (CoreData + 211568) [0x18a292a70]
+                                                                        27  _dispatch_lane_barrier_sync_invoke_and_complete + 56 (libdispatch.dylib + 71592) [0x182df77a8]
+                                                                          27  _dispatch_client_callout + 16 (libdispatch.dylib + 112732) [0x182e0185c]
+                                                                            27  developerSubmittedBlockToNSManagedObjectContextPerform + 252 (CoreData + 211888) [0x18a292bb0]
+                                                                              27  thunk for @escaping @callee_guaranteed () -> () + 28 (CoreData + 1134804) [0x18a3740d4]
+                                                                                27  thunk for @callee_guaranteed () -> () + 28 (CoreData + 1134764) [0x18a3740ac]
+                                                                                  27  closure #1 in closure #1 in NSManagedObjectContext._rethrowsHelper_performAndWait<A>(fn:execute:rescue:) + 192 (CoreData + 1158296) [0x18a379c98]
+                                                                                    27  partial apply for thunk for @callee_guaranteed () -> (@out A, @error @owned Error) + 24 (CoreData + 1160912) [0x18a37a6d0]
+                                                                                      27  thunk for @callee_guaranteed () -> (@out A, @error @owned Error) + 28 (CoreData + 1132600) [0x18a373838]
+                                                                                        27  ??? (VisualUnderstanding + 186332) [0x2626fe7dc]
+                                                                                          27  ??? (VisualUnderstanding + 187068) [0x2626feabc]
+                                                                                            27  ??? (VisualUnderstanding + 734588) [0x26278457c]
+                                                                                              27  ??? (VisualUnderstanding + 735572) [0x262784954]
+                                                                                                27  -[NSManagedObjectContext save:] + 1092 (CoreData + 405524) [0x18a2c2014]
+                                                                                                  27  -[NSPersistentStoreCoordinator executeRequest:withContext:error:] + 1308 (CoreData + 228580) [0x18a296ce4]
+                                                                                                    27  -[NSPersistentStoreCoordinator _routeHeavyweightBlock:] + 268 (CoreData + 230916) [0x18a297604]
+                                                                                                      27  __65-[NSPersistentStoreCoordinator executeRequest:withContext:error:]_block_invoke.520 + 10176 (CoreData + 1542924) [0x18a3d7b0c]
+                                                                                                        27  -[NSSQLCore executeRequest:withContext:error:] + 2544 (CoreData + 234424) [0x18a2983b8]
+                                                                                                          27  -[NSSQLCore dispatchRequest:withRetries:] + 440 (CoreData + 248664) [0x18a29bb58]
+                                                                                                            27  -[NSSQLDefaultConnectionManager handleStoreRequest:] + 248 (CoreData + 250208) [0x18a29c160]
+                                                                                                              27  -[NSSQLiteConnection performAndWait:] + 176 (CoreData + 146388) [0x18a282bd4]
+                                                                                                                27  _dispatch_lane_barrier_sync_invoke_and_complete + 56 (libdispatch.dylib + 71592) [0x182df77a8]
+                                                                                                                  27  _dispatch_client_callout + 16 (libdispatch.dylib + 112732) [0x182e0185c]
+                                                                                                                    27  __37-[NSSQLiteConnection performAndWait:]_block_invoke + 48 (CoreData + 146668) [0x18a282cec]
+                                                                                                                      27  __52-[NSSQLDefaultConnectionManager handleStoreRequest:]_block_invoke + 76 (CoreData + 251032) [0x18a29c498]
+                                                                                                                        27  -[NSSQLStoreRequestContext executeRequestUsingConnection:] + 272 (CoreData + 252028) [0x18a29c87c]
+                                                                                                                          27  -[NSSQLSaveChangesRequestContext executeRequestCore:] + 32 (CoreData + 566852) [0x18a2e9644]
+                                                                                                                            27  _executeSaveChangesRequest + 6520 (CoreData + 573816) [0x18a2eb178]
+                                                                                                                              27  -[NSSQLiteConnection commitTransaction] + 744 (CoreData + 607792) [0x18a2f3630]
+                                                                                                                                27  _execute + 136 (CoreData + 171212) [0x18a288ccc]
+                                                                                                                                  15  sqlite3_step + 932 (libsqlite3.dylib + 197116) [0x18a7051fc]
+                                                                                                                                    15  sqlite3VdbeExec + 45752 (libsqlite3.dylib + 245144) [0x18a710d98]
+                                                                                                                                      15  sqlite3VdbeHalt + 1368 (libsqlite3.dylib + 98448) [0x18a6ed090]
+                                                                                                                                        15  vdbeCommit + 1240 (libsqlite3.dylib + 270036) [0x18a716ed4]
+                                                                                                                                          15  sqlite3BtreeCommitPhaseOne + 160 (libsqlite3.dylib + 271420) [0x18a71743c]
+                                                                                                                                            15  sqlite3PagerCommitPhaseOne + 380 (libsqlite3.dylib + 339884) [0x18a727fac]
+                                                                                                                                              15  pagerWalFrames + 868 (libsqlite3.dylib + 706824) [0x18a781908]
+                                                                                                                                                15  unixWrite + 176 (libsqlite3.dylib + 340680) [0x18a7282c8]
+                                                                                                                                                  15  guarded_pwrite_np + 8 (libsystem_kernel.dylib + 17536) [0x182f61480]
+                                                                                                                                                    15  <on behalf of dasd [362] (originated by dasd [362]), Effective Thread QoS Utility>
+                                                                                                                                  12  sqlite3_step + 2188 (libsqlite3.dylib + 198372) [0x18a7056e4]
+                                                                                                                                    12  sqlite3WalDefaultHook + 80 (libsqlite3.dylib + 342872) [0x18a728b58]
+                                                                                                                                      12  sqlite3_wal_checkpoint_v2 + 708 (libsqlite3.dylib + 581552) [0x18a762fb0]
+                                                                                                                                        12  sqlite3BtreeCheckpoint + 364 (libsqlite3.dylib + 1207440) [0x18a7fbc90]
+                                                                                                                                          12  sqlite3WalCheckpoint + 4744 (libsqlite3.dylib + 424416) [0x18a73c9e0]
+                                                                                                                                            12  unixWrite + 176 (libsqlite3.dylib + 340680) [0x18a7282c8]
+                                                                                                                                              12  guarded_pwrite_np + 8 (libsystem_kernel.dylib + 17536) [0x182f61480]
+                                                                                                                                                12  <on behalf of dasd [362] (originated by dasd [362]), Effective Thread QoS Utility>
+                      1   ??? (mediaanalysisd + 1396748) [0x1050b900c]
+                        1   ??? (mediaanalysisd + 1363584) [0x1050b0e80]
+                          1   -[VCPPhotosQuickFaceIdentificationManager generateVIPModelWithType:ignoreLastGenerationTime:evaluationMode:allowUnverifiedPerson:modelGenerated:extendTimeout:andCancel:] + 172 (MediaAnalysis + 2023996) [0x24746423c]
+                            1   -[VCPPhotosQuickFaceIdentificationManager _generatePersonsModelWithExtendTimeoutBlock:cancel:evaluationMode:allowUnverifiedPerson:] + 2216 (MediaAnalysis + 2015332) [0x247462064]
+                              1   -[VCPPhotosQuickFaceIdentificationManager _persistPersonsModel:evaluationMode:error:] + 88 (MediaAnalysis + 2004060) [0x24745f45c]
+                                1   +[VCPFaceIDModel persistModel:toPath:error:] + 112 (MediaAnalysis + 903148) [0x2473527ec]
+                                  1   -[VNMutablePersonsModel writeToURL:options:error:] + 108 (Vision + 2361080) [0x1991d86f8]
+                                    1   -[VNMutablePersonsModel _writeToUnopenedStream:options:error:] + 92 (Vision + 2361268) [0x1991d87b4]
+                                      1   -[VNMutablePersonsModel writeToStream:options:error:] + 152 (Vision + 2361972) [0x1991d8a74]
+                                        1   -[VNMutablePersonsModel writeReadOnlyVersion1ToOutputStream:options:md5Context:error:] + 244 (Vision + 2363224) [0x1991d8f58]
+                                          1   VNPersonsModelIOWriteTaggedObjectToOutputStream + 116 (Vision + 2140820) [0x1991a2a94]
+                                            1   VNPersonsModelIOWriteTaggedDataToOutputStream + 236 (Vision + 2140656) [0x1991a29f0]
+                                              1   VNPersonsModelIOWriteTaggedBufferToOutputStream + 132 (Vision + 2140180) [0x1991a2814]
+                                                1   CFWriteStreamWrite + 312 (CoreFoundation + 332000) [0x18305f0e0]
+                                                  1   fileWrite + 28 (CoreFoundation + 907336) [0x1830eb848]
+                                                    1   write + 8 (libsystem_kernel.dylib + 18164) [0x182f616f4]
+                                                      1   <on behalf of dasd [362] (originated by dasd [362]), Effective Thread QoS Utility>
+    1   _pthread_wqthread + 292 (libsystem_pthread.dylib + 11808) [0x182f9be20]
+      1   _dispatch_workloop_worker_thread + 540 (libdispatch.dylib + 84712) [0x182dfaae8]
+        1   _dispatch_root_queue_drain_deferred_wlh + 292 (libdispatch.dylib + 86628) [0x182dfb264]
+          1   _dispatch_lane_invoke + 388 (libdispatch.dylib + 44588) [0x182df0e2c]
+            1   _dispatch_lane_serial_drain + 944 (libdispatch.dylib + 42012) [0x182df041c]
+              1   _dispatch_client_callout + 16 (libdispatch.dylib + 112732) [0x182e0185c]
+                1   _dispatch_call_block_and_release + 32 (libdispatch.dylib + 6956) [0x182de7b2c]
+                  1   ??? (mediaanalysisd + 1458972) [0x1050c831c]
+                    1   ??? (mediaanalysisd + 194524) [0x104f937dc]
+                      1   ??? (mediaanalysisd + 185344) [0x104f91400]
+                        1   ??? (mediaanalysisd + 119212) [0x104f811ac]
+                          1   _dispatch_lane_barrier_sync_invoke_and_complete + 56 (libdispatch.dylib + 71592) [0x182df77a8]
+                            1   _dispatch_client_callout + 16 (libdispatch.dylib + 112732) [0x182e0185c]
+                              1   ??? (mediaanalysisd + 119964) [0x104f8149c]
+                                1   -[MADVectorDatabase insertOrReplaceAssetsEmbeddings:error:] + 340 (MediaAnalysis + 710628) [0x2473237e4]
+                                  1   _dispatch_lane_barrier_sync_invoke_and_complete + 56 (libdispatch.dylib + 71592) [0x182df77a8]
+                                    1   _dispatch_client_callout + 16 (libdispatch.dylib + 112732) [0x182e0185c]
+                                      1   __59-[MADVectorDatabase insertOrReplaceAssetsEmbeddings:error:]_block_invoke + 224 (MediaAnalysis + 710984) [0x247323948]
+                                        1   ??? (VectorSearch + 335764) [0x261362f94]
+                                          1   ??? (VectorSearch + 333056) [0x261362500]
+                                            1   ??? (VectorSearch + 259368) [0x261350528]
+                                              1   ??? (VectorSearch + 47200) [0x26131c860]
+                                                1   ??? (VectorSearch + 50496) [0x26131d540]
+                                                  1   ??? (VectorSearch + 57664) [0x26131f140]
+                                                    1   ??? (VectorSearch + 57928) [0x26131f248]
+                                                      1   ??? (VectorSearch + 47604) [0x26131c9f4]
+                                                        1   ??? (VectorSearch + 179172) [0x26133cbe4]
+                                                          1   ??? (VectorSearch + 182480) [0x26133d8d0]
+                                                            1   ??? (VectorSearch + 201264) [0x261342230]
+                                                              1   sqlite3_step + 2188 (libsqlite3.dylib + 198372) [0x18a7056e4]
+                                                                1   sqlite3WalDefaultHook + 80 (libsqlite3.dylib + 342872) [0x18a728b58]
+                                                                  1   sqlite3_wal_checkpoint_v2 + 708 (libsqlite3.dylib + 581552) [0x18a762fb0]
+                                                                    1   sqlite3BtreeCheckpoint + 364 (libsqlite3.dylib + 1207440) [0x18a7fbc90]
+                                                                      1   sqlite3WalCheckpoint + 4744 (libsqlite3.dylib + 424416) [0x18a73c9e0]
+                                                                        1   unixWrite + 176 (libsqlite3.dylib + 340680) [0x18a7282c8]
+                                                                          1   guarded_pwrite_np + 8 (libsystem_kernel.dylib + 17536) [0x182f61480]
+                                                                            1   <on behalf of dasd [362] (originated by dasd [362]), Effective Thread QoS Utility>
+
+  Binary Images:
+           0x104f64000 -        0x1051f3fff  mediaanalysisd (325.4.1)                                             <463AB546-E083-311D-9958-EC4A4AAF0777>  /System/Library/PrivateFrameworks/MediaAnalysis.framework/Versions/A/mediaanalysisd
+           0x182de6000 -        0x182e2c75f  libdispatch.dylib (1521.140.2)                                       <63A54CE1-2AB6-3673-82E4-D8489D811475>  /usr/lib/system/libdispatch.dylib
+           0x182f5d000 -        0x182f985f3  libsystem_kernel.dylib (11417.140.69.708.3)                          <85034943-C8B6-3C69-8B4B-039CD25EF16D>  /usr/lib/system/libsystem_kernel.dylib
+           0x182f99000 -        0x182fa5a77  libsystem_pthread.dylib (536.0.0.702.1)                              <C0519BF8-8FC4-3222-A4A7-D98AF817277C>  /usr/lib/system/libsystem_pthread.dylib
+           0x18300e000 -        0x18354cfff  com.apple.CoreFoundation 6.9 (3603.1.405)                            <A62A694C-6A33-3D79-81CE-37440D549D08>  /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation
+           0x18a25f000 -        0x18a6b9e3f  com.apple.CoreData 120 (1448.1)                                      <B4183D2F-38A2-3D02-89E7-D49078688D0A>  /System/Library/Frameworks/CoreData.framework/Versions/A/CoreData
+           0x18a6d5000 -        0x18a889c67  libsqlite3.dylib (360.4)                                             <7BE2BA1C-7F54-3BE0-8E1C-A71503FD5B8B>  /usr/lib/libsqlite3.dylib
+           0x198f98000 -        0x19954dd9f  com.apple.VN 8.0.90 (8.0.90)                                         <FD798F53-9C5E-3B65-9B2D-ECFA214AF4AD>  /System/Library/Frameworks/Vision.framework/Versions/A/Vision
+           0x19a71c000 -        0x19a732af8  libswiftDispatch.dylib (54)                                          <4E2F0109-0344-33C3-B4AD-C11A200E57F1>  /usr/lib/swift/libswiftDispatch.dylib
+           0x2422a0000 -        0x2428dba7f  com.apple.intelligenceplatform.IntelligencePlatform 1.0 (124.19.0.1) <72B62263-5FA1-3710-90FD-1C23A146FF20>  /System/Library/PrivateFrameworks/IntelligencePlatform.framework/Versions/A/IntelligencePlatform
+           0x247276000 -        0x24776707f  com.apple.MediaAnalysis 1.0 (1)                                      <9D54D9D7-0B03-3D10-A5BB-00F767469980>  /System/Library/PrivateFrameworks/MediaAnalysis.framework/Versions/A/MediaAnalysis
+           0x261311000 -        0x2613914df  com.apple.vectordb.VectorSearch 1.0 (38.1)                           <B44BC829-E922-3B83-8DDC-0036CD46E6B8>  /System/Library/PrivateFrameworks/VectorSearch.framework/Versions/A/VectorSearch
+           0x2626d1000 -        0x2627cabfe  com.apple.VisualUnderstanding 1.0 (1)                                <AB4B05DE-5BA5-3D4D-BA9E-96EA8429DF77>  /System/Library/PrivateFrameworks/VisualUnderstanding.framework/Versions/A/VisualUnderstanding
+
+
+Powerstats for:   mobileassetd
+UUID:             E7759B8A-C74B-36E1-80D6-5341FF234CAC
+Path:             /usr/libexec/mobileassetd
+Codesigning ID:   com.apple.mobileassetd
+Resource Coalition: 53 samples 398
+On Behalf Of:     53 samples UNKNOWN [508, 620] (45 samples originated by UNKNOWN [620], 8 samples originated by UserEventAgent [313])
+Architecture:     arm64
+Start time:       2026-04-07 15:25:24.682 +0900
+End time:         2026-04-07 21:43:01.227 +0900
+Num samples:      53 (8%)
+Primary state:    42 samples Non-Frontmost App, Non-Suppressed, Kernel mode, Effective Thread QoS Background, Requested Thread QoS User Initiated, Override Thread QoS Unspecified, e-core
+User Activity:    25 samples Idle, 28 samples Active
+Power Source:     16 samples on Battery, 37 samples on AC
+  53  start_wqthread + 8 (libsystem_pthread.dylib + 7028) [0x182f9ab74]
+    53  _pthread_wqthread + 292 (libsystem_pthread.dylib + 11808) [0x182f9be20]
+      53  _dispatch_workloop_worker_thread + 540 (libdispatch.dylib + 84712) [0x182dfaae8]
+        53  _dispatch_root_queue_drain_deferred_wlh + 292 (libdispatch.dylib + 86628) [0x182dfb264]
+          53  _dispatch_lane_invoke + 440 (libdispatch.dylib + 44640) [0x182df0e60]
+            53  _dispatch_lane_serial_drain + 740 (libdispatch.dylib + 41808) [0x182df0350]
+              53  _dispatch_client_callout + 16 (libdispatch.dylib + 112732) [0x182e0185c]
+                53  _dispatch_call_block_and_release + 32 (libdispatch.dylib + 6956) [0x182de7b2c]
+                  40  __48-[ControlManager writeDictionaryToFile:to:with:]_block_invoke + 848 (libmobileassetd.dylib + 2304944) [0x10dd72bb0]
+                    40  safeAtomicWriteToPath + 304 (libmobileassetd.dylib + 2361132) [0x10dd8072c]
+                      40  -[NSDictionary(NSDictionary) writeToFile:atomically:] + 148 (Foundation + 840192) [0x1846cc200]
+                        40  @objc static NSData._writeData(toPath:data:options:reportProgress:) + 100 (Foundation + 5021124) [0x184ac8dc4]
+                          40  specialized static NSData._writeData(toPath:data:options:reportProgress:) + 2476 (Foundation + 5050592) [0x184ad00e0]
+                            40  write + 8 (libsystem_kernel.dylib + 18164) [0x182f616f4]
+                              37  <on behalf of UNKNOWN [620] (originated by UNKNOWN [620])>
+                              3   <on behalf of UNKNOWN [620] (originated by UNKNOWN [620]), Effective Thread QoS User Initiated>
+                  8   -[SUCoreFSM _postEvent:withInfo:] + 736 (SoftwareUpdateCoreSupport + 142632) [0x1b297dd28]
+                    8   -[SUCoreFSM _performEvent:withInfo:issueType:forCell:attachedAction:checkingAttached:] + 508 (SoftwareUpdateCoreSupport + 145504) [0x1b297e860]
+                      8   -[SUCoreFSM _triggerAction:usingAttached:onEvent:inState:withInfo:nextState:] + 340 (SoftwareUpdateCoreSupport + 146904) [0x1b297edd8]
+                        7   -[MADAutoAssetStager performAction:onEvent:inState:withInfo:nextState:error:] + 1444 (libmobileassetd.dylib + 327548) [0x10db8ff7c]
+                          7   -[MADAutoAssetStager action_AddToAvailableDecideMoreCandidates:error:] + 148 (libmobileassetd.dylib + 374204) [0x10db9b5bc]
+                            5   -[MADAutoAssetStager lookupCacheUpdateWithDetermineResult:fromLocation:] + 2492 (libmobileassetd.dylib + 488416) [0x10dbb73e0]
+                              2   -[MADAutoAssetStager _persistDescriptor:operation:persistingDescriptor:withRepresentation:message:] + 524 (libmobileassetd.dylib + 513860) [0x10dbbd744]
+                                2   -[SUCorePersistedState persistString:forKey:forType:shouldPersist:] + 824 (SoftwareUpdateCoreSupport + 230328) [0x1b29933b8]
+                                  2   -[SUCorePersistedState _writePersistedState] + 164 (SoftwareUpdateCoreSupport + 235700) [0x1b29948b4]
+                                    2   @objc static NSData._writeData(toPath:data:options:reportProgress:) + 100 (Foundation + 5021124) [0x184ac8dc4]
+                                      2   specialized static NSData._writeData(toPath:data:options:reportProgress:) + 2076 (Foundation + 5050192) [0x184acff50]
+                                        2   closure #1 in writeToFileAux(path:buffer:options:attributes:reportProgress:) + 4336 (Foundation + 5026052) [0x184aca104]
+                                          2   write + 8 (libsystem_kernel.dylib + 18164) [0x182f616f4]
+                                            2   <on behalf of UNKNOWN [508] (originated by UserEventAgent [313]), Requested Thread QoS Background>
+                              2   -[MADAutoAssetStager _persistDescriptor:operation:persistingDescriptor:withRepresentation:message:] + 416 (libmobileassetd.dylib + 513752) [0x10dbbd6d8]
+                                2   -[MADAutoAssetPersisted persistedEntry:fromLocation:] + 132 (libmobileassetd.dylib + 612980) [0x10dbd5a74]
+                                  1   -[MADAutoAssetPersisted _loadPersistedEntry:forEntryName:withEntryStatus:] + 1800 (libmobileassetd.dylib + 621380) [0x10dbd7b44]
+                                    1   -[MADAutoAssetPersisted _persistTableOfContents:forEntryName:withEntryStatus:] + 112 (libmobileassetd.dylib + 619540) [0x10dbd7414]
+                                      1   -[SUCorePersistedState persistObject:forKey:forType:shouldPersist:] + 824 (SoftwareUpdateCoreSupport + 234024) [0x1b2994228]
+                                        1   -[SUCorePersistedState _writePersistedState] + 164 (SoftwareUpdateCoreSupport + 235700) [0x1b29948b4]
+                                          1   @objc static NSData._writeData(toPath:data:options:reportProgress:) + 100 (Foundation + 5021124) [0x184ac8dc4]
+                                            1   specialized static NSData._writeData(toPath:data:options:reportProgress:) + 2076 (Foundation + 5050192) [0x184acff50]
+                                              1   closure #1 in writeToFileAux(path:buffer:options:attributes:reportProgress:) + 4336 (Foundation + 5026052) [0x184aca104]
+                                                1   write + 8 (libsystem_kernel.dylib + 18164) [0x182f616f4]
+                                                  1   <on behalf of UNKNOWN [508] (originated by UserEventAgent [313]), Requested Thread QoS Background>
+                                  1   -[MADAutoAssetPersisted _loadPersistedEntry:forEntryName:withEntryStatus:] + 1780 (libmobileassetd.dylib + 621360) [0x10dbd7b30]
+                                    1   -[MADAutoAssetPersisted _persistStatusChange:ofEntryName:withEntrySummary:currentStatus:fromLocation:] + 124 (libmobileassetd.dylib + 622508) [0x10dbd7fac]
+                                      1   -[SUCorePersistedState persistString:forKey:forType:shouldPersist:] + 824 (SoftwareUpdateCoreSupport + 230328) [0x1b29933b8]
+                                        1   -[SUCorePersistedState _writePersistedState] + 164 (SoftwareUpdateCoreSupport + 235700) [0x1b29948b4]
+                                          1   @objc static NSData._writeData(toPath:data:options:reportProgress:) + 100 (Foundation + 5021124) [0x184ac8dc4]
+                                            1   specialized static NSData._writeData(toPath:data:options:reportProgress:) + 2076 (Foundation + 5050192) [0x184acff50]
+                                              1   closure #1 in writeToFileAux(path:buffer:options:attributes:reportProgress:) + 4336 (Foundation + 5026052) [0x184aca104]
+                                                1   write + 8 (libsystem_kernel.dylib + 18164) [0x182f616f4]
+                                                  1   <on behalf of UNKNOWN [508] (originated by UserEventAgent [313]), Requested Thread QoS Background>
+                              1   -[MADAutoAssetStager _persistDescriptor:operation:persistingDescriptor:withRepresentation:message:] + 748 (libmobileassetd.dylib + 514084) [0x10dbbd824]
+                                1   -[MADAutoAssetPersisted storePersistedEntry:withEntrySummary:fromLocation:] + 188 (libmobileassetd.dylib + 613408) [0x10dbd5c20]
+                                  1   -[MADAutoAssetPersisted _persistStatusChange:ofEntryName:withEntrySummary:currentStatus:fromLocation:] + 124 (libmobileassetd.dylib + 622508) [0x10dbd7fac]
+                                    1   -[SUCorePersistedState persistString:forKey:forType:shouldPersist:] + 824 (SoftwareUpdateCoreSupport + 230328) [0x1b29933b8]
+                                      1   -[SUCorePersistedState _writePersistedState] + 164 (SoftwareUpdateCoreSupport + 235700) [0x1b29948b4]
+                                        1   @objc static NSData._writeData(toPath:data:options:reportProgress:) + 100 (Foundation + 5021124) [0x184ac8dc4]
+                                          1   specialized static NSData._writeData(toPath:data:options:reportProgress:) + 2076 (Foundation + 5050192) [0x184acff50]
+                                            1   closure #1 in writeToFileAux(path:buffer:options:attributes:reportProgress:) + 4336 (Foundation + 5026052) [0x184aca104]
+                                              1   write + 8 (libsystem_kernel.dylib + 18164) [0x182f616f4]
+                                                1   <on behalf of UNKNOWN [508] (originated by UserEventAgent [313]), Requested Thread QoS Background>
+                            2   -[MADAutoAssetStager lookupCacheUpdateWithDetermineResult:fromLocation:] + 2584 (libmobileassetd.dylib + 488508) [0x10dbb743c]
+                              2   -[SUCorePersistedState persistULL:forKey:forType:shouldPersist:] + 452 (SoftwareUpdateCoreSupport + 229168) [0x1b2992f30]
+                                2   -[SUCorePersistedState _writePersistedState] + 164 (SoftwareUpdateCoreSupport + 235700) [0x1b29948b4]
+                                  2   @objc static NSData._writeData(toPath:data:options:reportProgress:) + 100 (Foundation + 5021124) [0x184ac8dc4]
+                                    2   specialized static NSData._writeData(toPath:data:options:reportProgress:) + 2076 (Foundation + 5050192) [0x184acff50]
+                                      2   closure #1 in writeToFileAux(path:buffer:options:attributes:reportProgress:) + 4336 (Foundation + 5026052) [0x184aca104]
+                                        2   write + 8 (libsystem_kernel.dylib + 18164) [0x182f616f4]
+                                          2   <on behalf of UNKNOWN [508] (originated by UserEventAgent [313]), Requested Thread QoS Background>
+                        1   -[MADAutoAssetStager performAction:onEvent:inState:withInfo:nextState:error:] + 2504 (libmobileassetd.dylib + 328608) [0x10db903a0]
+                          1   -[MADAutoAssetStager action_ReplyNoCandidatesPurgeAll:error:] + 116 (libmobileassetd.dylib + 398148) [0x10dba1344]
+                            1   -[MADAutoAssetStager _clearAllTrackingOfActiveOperations:alsoPerformingPurgeAll:removingDetermined:] + 1324 (libmobileassetd.dylib + 446796) [0x10dbad14c]
+                              1   -[MADAutoAssetStager _persistRemoveAll:message:removingDetermined:loggingConfig:] + 152 (libmobileassetd.dylib + 519860) [0x10dbbeeb4]
+                                1   -[MADAutoAssetPersisted removeAllPersistedEntries:] + 392 (libmobileassetd.dylib + 616480) [0x10dbd6820]
+                                  1   -[MADAutoAssetPersisted removePersistedEntry:fromLocation:] + 920 (libmobileassetd.dylib + 615700) [0x10dbd6514]
+                                    1   -[MADAutoAssetPersisted _persistTableOfContents:forEntryName:withEntryStatus:] + 112 (libmobileassetd.dylib + 619540) [0x10dbd7414]
+                                      1   -[SUCorePersistedState persistObject:forKey:forType:shouldPersist:] + 824 (SoftwareUpdateCoreSupport + 234024) [0x1b2994228]
+                                        1   -[SUCorePersistedState _writePersistedState] + 164 (SoftwareUpdateCoreSupport + 235700) [0x1b29948b4]
+                                          1   @objc static NSData._writeData(toPath:data:options:reportProgress:) + 100 (Foundation + 5021124) [0x184ac8dc4]
+                                            1   specialized static NSData._writeData(toPath:data:options:reportProgress:) + 2076 (Foundation + 5050192) [0x184acff50]
+                                              1   closure #1 in writeToFileAux(path:buffer:options:attributes:reportProgress:) + 4336 (Foundation + 5026052) [0x184aca104]
+                                                1   write + 8 (libsystem_kernel.dylib + 18164) [0x182f616f4]
+                                                  1   <on behalf of UNKNOWN [508] (originated by UserEventAgent [313]), Requested Thread QoS Background>
+                  5   __48-[ControlManager writeDictionaryToFile:to:with:]_block_invoke + 224 (libmobileassetd.dylib + 2304320) [0x10dd72940]
+                    5   @objc _NSFileManagerBridge.removeItem(atPath:) + 136 (Foundation + 5310492) [0x184b0f81c]
+                      5   specialized String.withFileSystemRepresentation<A>(_:) + 520 (Foundation + 7314444) [0x184cf8c0c]
+                        5   specialized static _FileOperations._removeFile(_:_:with:) + 136 (Foundation + 5480096) [0x184b38ea0]
+                          5   closure #1 in static _FileOperations._removeFile(_:_:with:) + 352 (Foundation + 5441616) [0x184b2f850]
+                            5   specialized static _FileOperations._removeFile(_:_:state:) + 80 (Foundation + 5477604) [0x184b384e4]
+                              5   removefile + 304 (libremovefile.dylib + 2384) [0x1911eb950]
+                                5   __removefile_tree_walker + 604 (libremovefile.dylib + 3376) [0x1911ebd30]
+                                  5   __unlink + 8 (libsystem_kernel.dylib + 19308) [0x182f61b6c]
+                                    5   <on behalf of UNKNOWN [620] (originated by UNKNOWN [620])>
+
+  Binary Images:
+           0x1023bc000 -                ???  mobileassetd                                <E7759B8A-C74B-36E1-80D6-5341FF234CAC>  /usr/libexec/mobileassetd
+           0x10db40000 -        0x10df6ffff  libmobileassetd.dylib (1487.140.26.700.1)   <20757A9A-393A-38E2-95CE-2CC7BBB1446C>  /Volumes/VOLUME/*/libmobileassetd.dylib
+           0x182de6000 -        0x182e2c75f  libdispatch.dylib (1521.140.2)              <63A54CE1-2AB6-3673-82E4-D8489D811475>  /usr/lib/system/libdispatch.dylib
+           0x182f5d000 -        0x182f985f3  libsystem_kernel.dylib (11417.140.69.708.3) <85034943-C8B6-3C69-8B4B-039CD25EF16D>  /usr/lib/system/libsystem_kernel.dylib
+           0x182f99000 -        0x182fa5a77  libsystem_pthread.dylib (536.0.0.702.1)     <C0519BF8-8FC4-3222-A4A7-D98AF817277C>  /usr/lib/system/libsystem_pthread.dylib
+           0x1845ff000 -        0x1853e85bf  com.apple.Foundation 6.9 (3603.1.405)       <7C9ABA87-468A-3830-86E2-6AC8F8105ACD>  /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation
+           0x1911eb000 -        0x1911edb6f  libremovefile.dylib (81)                    <E34EF2FA-1C55-3222-B1A2-CEEEC4B02F3D>  /usr/lib/system/libremovefile.dylib
+           0x1b295b000 -        0x1b29bbadf  com.apple.SoftwareUpdateCoreSupport 1.0 (1) <628C1C94-B863-3E3F-9E7F-233546EF8045>  /System/Library/PrivateFrameworks/SoftwareUpdateCoreSupport.framework/Versions/A/SoftwareUpdateCoreSupport
+
+
+Powerstats for:   Ollama
+UUID:             137B897A-EC97-3C61-E5FC-976FFDEBE744
+Path:             /Applications/Ollama.app/Contents/MacOS/Ollama
+Identifier:       com.electron.ollama
+Version:          0.18.3 (0.18.3)
+Team ID:          3MU9H2V9Y9
+Is First Party:   No
+Beta Identifier:  BCA5CAB9-1C62-5B30-86F6-B2A720B113D0
+Resource Coalition: 34 samples 1265
+Architecture:     arm64
+Start time:       2026-04-07 16:16:43.045 +0900
+End time:         2026-04-07 16:16:44.074 +0900
+Num samples:      34 (5%)
+Primary state:    34 samples Non-Frontmost App, Non-Suppressed, Kernel mode, Effective Thread QoS Default, Requested Thread QoS Default, Override Thread QoS Unspecified, p-core
+User Activity:    34 samples Idle, 0 samples Active
+Power Source:     0 samples on Battery, 34 samples on AC
+  34  ??? (Ollama + 491708) [0x102d380bc]
+    34  write + 8 (libsystem_kernel.dylib + 18164) [0x182f616f4]
+
+  Binary Images:
+           0x102cc0000 -        0x10440bfff  com.electron.ollama 0.18.3 (0.18.3)         <137B897A-EC97-3C61-E5FC-976FFDEBE744>  /Applications/Ollama.app/Contents/MacOS/Ollama
+           0x182f5d000 -        0x182f985f3  libsystem_kernel.dylib (11417.140.69.708.3) <85034943-C8B6-3C69-8B4B-039CD25EF16D>  /usr/lib/system/libsystem_kernel.dylib
